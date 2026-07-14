@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TurnoService } from '../services/turno.ts';
 
 @Component({
   selector: 'app-turn-list',
@@ -6,10 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: './turn-list.html',
   styleUrl: './turn-list.scss'
 })
-export class TurnList {
-turn= {
-  "Fecha": "12/10/2025",
-  "Hora" :"12:00",
-  "Estado" : "Ocupado",
-}
+export class TurnList implements OnInit {
+  turnos: any[] = []; // Acá guardaremos los datos que vengan de la API
+
+  constructor(private turnoService: TurnoService) {}
+
+  ngOnInit() {
+    this.turnoService.getTurnos().subscribe((datos: any) => {
+      this.turnos = datos; // Guardamos los datos de la API en el array
+      console.log('Turnos obtenidos:', this.turnos);
+    });
+  }
 }

@@ -1,14 +1,11 @@
-<table class="table">
-    <thead>
-        <tr>
-            
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{turn.Fecha}}</td>
-            <td>{{turn.Estado}}</td>
-            <td>{{turn.Hora}}</td>
-        </tr>
-    </tbody>
-</table>
+<h2>Listado de Turnos</h2>
+
+@for (t of turnos; track t.id) {
+  <div class="turno-card">
+    <p>Fecha: {{ t.Fecha }}</p>
+    <p>Hora: {{ t.Hora }}</p>
+    <p>Estado: {{ t.Estado }}</p>
+  </div>
+} @empty {
+  <p>No hay turnos cargados aún.</p>
+}
