@@ -1,59 +1,32 @@
-# SaludTurnos
+Desarrollo y acceso
+Desarrollado por Sofia Micaela Cuartas
+DNI: 45865979
+Email: cuartasofiamicaela@gmail.com
+Sede: Tandil
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+KineTurnos - Sistema de Gestión de Turnos
+Este proyecto es una aplicación web de gestión de turnos desarrollada con Angular. El sistema permite a los usuarios realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre una lista de turnos, consumiendo datos desde una API externa (MockAPI).
 
-## Development server
+Características principales
+Gestión de Turnos: Interfaz intuitiva para listar, agregar, editar y eliminar turnos.
+Comunicación con API: Consumo de servicios RESTful mediante HttpClient para persistencia de datos.
+UX Mejorada: Uso de Toasts para notificaciones de éxito y Modales de confirmación para acciones críticas.
+Interfaz Dinámica: Fuentes personalizadas (Poppins), efectos de desenfoque (backdrop-filter).
 
-To start a local development server, run:
+Tecnologías utilizadas
+Angular: Framework principal.
 
-```bash
-ng serve
-```
+Bootstrap: Framework CSS para el diseño visual.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Reactive Forms: Gestión y validación de formularios.
 
-## Code scaffolding
+MockAPI: Backend como servicio para el almacenamiento de datos.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+RxJS: Manejo de flujos de datos asíncronos.
 
-```bash
-ng generate component component-name
-```
+Estructura del Proyecto
+/src/app/services: Contiene el TurnoService encargado de la lógica de comunicación con la API.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+/src/app/components: Incluye los componentes principales (TurnList y TurnForm) que gestionan la vista y la interacción del usuario.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+/src/styles.scss: Estilos globales, tipografía y animaciones de fondo.
