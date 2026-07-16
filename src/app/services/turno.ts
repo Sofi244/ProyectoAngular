@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class TurnoService { 
 private apiUrl = 'https://6a569422b17de7bebbde61da.mockapi.io/turnos/turnos';
 
+turnoParaEditar: any = null;
+
   constructor(private http: HttpClient) {} // Esto es lo que permite conectar a la API
 
   getTurnos() {
@@ -15,5 +17,13 @@ private apiUrl = 'https://6a569422b17de7bebbde61da.mockapi.io/turnos/turnos';
   
   addTurno(turno: any) {
     return this.http.post(this.apiUrl, turno);
+  }
+
+  deleteTurno(id: string) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
+  updateTurno(id: string, turno: any) {
+    return this.http.put(`${this.apiUrl}/${id}`, turno);
   }
 }

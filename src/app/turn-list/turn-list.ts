@@ -18,4 +18,13 @@ export class TurnList implements OnInit {
       console.log('Turnos obtenidos:', this.turnos);
     });
   }
+
+  eliminarTurno(id: string) {
+    if (confirm('¿Estás segura de que querés eliminar este turno?')) {
+      this.turnoService.deleteTurno(id).subscribe(() => {
+        // Filtramos el array para quitar el turno eliminado de la vista
+        this.turnos = this.turnos.filter(t => t.id !== id);
+      });
+    }
+  }
 }
