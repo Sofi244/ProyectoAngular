@@ -1,44 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">{{title}}</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Listado</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Turnos
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Sacar turno</a></li>
-            <li><a class="dropdown-item" href="#">Cancelar turno</a></li>
-            <li><a class="dropdown-item" href="#">Actualizar turno</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<div>
+<nav> ... tu nav ... </nav>
+
 <div class="container">
-    <div class="row">
-        <div class="col-8">
-            <app-turn-list></app-turn-list>
-        </div>
-        <div class="col-8">Que tratamos?</div>
-        <div class="col-8">Mail</div>
-        <div class="col-8">Sobre mi</div>
-    </div>
+    <router-outlet></router-outlet> 
 </div>
-</div>
-<footer>{{title}} 2025, Sofia Micaela Cuartas</footer>
+
+<footer> ... </footer>

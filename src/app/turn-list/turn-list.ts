@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TurnoService } from '../services/turno';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-turn-list',
@@ -10,7 +11,8 @@ import { TurnoService } from '../services/turno';
 export class TurnList implements OnInit {
   turnos: any[] = []; // Acá guardaremos los datos que vengan de la API
 
-  constructor(private turnoService: TurnoService) {}
+  constructor(private turnoService: TurnoService,
+    private router: Router) {}
 
   ngOnInit() {
     this.turnoService.getTurnos().subscribe((datos: any) => {
@@ -26,5 +28,10 @@ export class TurnList implements OnInit {
         this.turnos = this.turnos.filter(t => t.id !== id);
       });
     }
+  }
+
+  editarTurno(turno: any) {
+    this.turnoService.turnoParaEditar = turno; // Ahora este bolsillo sí existe
+    this.router.navigate(['/nuevo']); 
   }
 }

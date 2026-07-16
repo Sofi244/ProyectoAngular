@@ -6,6 +6,7 @@
     <p>Fecha: {{ t.fecha }}</p>
     <p>Hora: {{ t.hora }}</p>
     <p>Tratamiento: {{ t.tratamiento }}</p>
+    <button (click)="editarTurno(t)" style="margin-right: 10px;">Editar</button>
     <button (click)="eliminarTurno(t.id)">Eliminar Turno</button>
   </div>
 }
