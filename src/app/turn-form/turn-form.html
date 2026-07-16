@@ -1,1 +1,6 @@
-<p>turn-form works!</p>
+<form [formGroup]="turnoForm" (ngSubmit)="guardarTurno()">
+    <input formControlName="paciente" placeholder="Nombre del Paciente">
+    <input formControlName="fecha" type="date">
+    <input formControlName="hora" type="time">
+    <button type="submit" [disabled]="turnoForm.invalid">Guardar Turno</button>
+  </form>

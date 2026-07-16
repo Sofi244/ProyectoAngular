@@ -1,11 +1,9 @@
 <h2>Listado de Turnos</h2>
 
-@for (t of turnos; track t.id) {
-  <div class="turno-card">
-    <p>Fecha: {{ t.Fecha }}</p>
-    <p>Hora: {{ t.Hora }}</p>
-    <p>Estado: {{ t.Estado }}</p>
+<pre>{{ turnos | json }}</pre> @for (t of turnos; track t.id) {
+  <div style="border: 1px solid black; margin: 10px; padding: 10px;">
+    <h3>Paciente: {{ t.paciente }}</h3>
+    <p>Fecha: {{ t.fecha }}</p>
+    <p>Hora: {{ t.hora }}</p>
   </div>
-} @empty {
-  <p>No hay turnos cargados aún.</p>
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TurnoService } from '../services/turno.ts';
+import { TurnoService } from '../services/turno';
 
 @Component({
   selector: 'app-turn-list',

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { TurnList } from './turn-list/turn-list';
 import { TurnForm } from './turn-form/turn-form';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TurnForm } from './turn-form/turn-form';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule // 2. AGREGÁ ESTO ACÁ
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [], // Quitá el provideBrowserGlobalErrorListeners si te tira error, no es vital ahora
   bootstrap: [App]
