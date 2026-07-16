@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #95c1ec;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10; 
+    background-image: url("https://icons.getbootstrap.com/assets/icons/window-fullscreen.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 250px;
+    opacity: 0.1;
+    animation: float 8s infinite ease-in-out;
+  }
+  
+  
+  /* Hover azul para el botón de "Nuevo Turno" */
+  .nav-link.btn-outline-light:hover {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+  }
+  
+  /* Botón Editar: Celeste claro */
+  .btn-warning {
+    background-color: #87ceeb; /* SkyBlue */
+    border-color: #87ceeb;
+    color: #fff;
+  }
+  .btn-warning:hover {
+    background-color: #00bfff ; /* DeepSkyBlue */
+    border-color: #00bfff;
+  }

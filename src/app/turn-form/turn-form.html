@@ -1,7 +1,24 @@
-<form [formGroup]="turnoForm" (ngSubmit)="guardarTurno()">
-    <input formControlName="paciente" placeholder="Nombre del Paciente">
-    <input formControlName="fecha" type="date">
-    <input formControlName="hora" type="time">
-    <input formControlName="tratamiento" placeholder="Tratamiento a realizar">
-    <button type="submit" [disabled]="turnoForm.invalid">Guardar Turno</button>
+<div class="container">
+  <h3 class="mb-3">Gestionar Turno</h3>
+  <form [formGroup]="turnoForm" (ngSubmit)="guardarTurno()">
+    <div class="mb-3">
+      <label class="form-label">Paciente</label>
+      <input formControlName="paciente" class="form-control" type="text">
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Fecha</label>
+        <input formControlName="fecha" class="form-control" type="date">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Hora</label>
+        <input formControlName="hora" class="form-control" type="time">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Tratamiento</label>
+        <input formControlName="tratamiento" class="form-control" type="text">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="turnoForm.invalid">Guardar Turno</button>
   </form>
+</div>

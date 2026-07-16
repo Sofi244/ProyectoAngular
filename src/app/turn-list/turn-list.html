@@ -1,12 +1,39 @@
-<h2>Listado de Turnos</h2>
-
-@for (t of turnos; track t.id) {
-  <div style="border: 1px solid black; margin: 10px; padding: 10px;">
-    <h3>Paciente: {{ t.paciente }}</h3>
-    <p>Fecha: {{ t.fecha }}</p>
-    <p>Hora: {{ t.hora }}</p>
-    <p>Tratamiento: {{ t.tratamiento }}</p>
-    <button (click)="editarTurno(t)" style="margin-right: 10px;">Editar</button>
-    <button (click)="eliminarTurno(t.id)">Eliminar Turno</button>
+<div class="container mt-3">
+  <h2 class="mb-4">Turnos</h2>
+  
+  <div class="row">
+    @for (t of turnos; track t.id) {
+      <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-primary">{{ t.paciente }}</h5>
+            <p class="card-text">
+              <strong>Fecha:</strong> {{ t.fecha }} <br>
+              <strong>Hora:</strong> {{ t.hora }} <br>
+              <strong>Tratamiento:</strong> {{ t.tratamiento }}
+            </p>
+            <button class="btn btn-warning btn-sm me-2" (click)="editarTurno(t)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="eliminarTurno(t.id)">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    }
   </div>
-}
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar eliminación</h5>
+      </div>
+      <div class="modal-body">
+        ¿Estás segura de que querés eliminar este turno? Esta acción no se puede deshacer.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="confirmarEliminacion()">Sí, eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

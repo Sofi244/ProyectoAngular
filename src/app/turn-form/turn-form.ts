@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TurnoService } from '../services/turno';
-import { Router } from '@angular/router'; // Importamos el Router para navegar
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-turn-form',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router'; // Importamos el Router para navegar
 })
 export class TurnForm implements OnInit {
   turnoForm: FormGroup;
-  turnoAEditar: any = null; // Variable para guardar el turno que viene para editar
+  turnoAEditar: any = null;
 
   constructor(
     private fb: FormBuilder, 
@@ -28,10 +28,22 @@ export class TurnForm implements OnInit {
   }
 
   ngOnInit() {
-    // Si guardaste el turno en el servicio antes de navegar, lo recuperamos acá
     this.turnoAEditar = this.turnoService.turnoParaEditar;
     if (this.turnoAEditar) {
-      this.turnoForm.patchValue(this.turnoAEditar); // Llena el formulario con los datos
+      this.turnoForm.patchValue(this.turnoAEditar);
+    } else {
+      this.turnoForm.reset({ estado: 'Disponible' });
+    }
+  }
+
+  // Nueva función auxiliar para el Toast
+  private mostrarToast(mensaje: string) {
+    const toastEl = document.getElementById('liveToast');
+    const toastBody = document.getElementById('toastMessage');
+    if (toastEl && toastBody) {
+      toastBody.innerText = mensaje;
+      const toast = new (window as any).bootstrap.Toast(toastEl);
+      toast.show();
     }
   }
 
@@ -40,16 +52,16 @@ export class TurnForm implements OnInit {
       if (this.turnoAEditar) {
         // MODO UPDATE
         this.turnoService.updateTurno(this.turnoAEditar.id, this.turnoForm.value).subscribe(() => {
-          alert('Turno actualizado con éxito');
-          this.turnoService.turnoParaEditar = null; // Limpiamos la variable
-          this.router.navigate(['/listado']); // Volvemos al listado
+          this.mostrarToast('Turno actualizado con éxito');
+          this.turnoService.turnoParaEditar = null;
+          setTimeout(() => this.router.navigate(['/listado']), 500);
         });
       } else {
         // MODO CREATE
         this.turnoService.addTurno(this.turnoForm.value).subscribe(() => {
-          alert('Turno guardado con éxito');
-          this.turnoForm.reset();
-          this.router.navigate(['/listado']);
+          this.mostrarToast('Turno guardado con éxito');
+          this.turnoForm.reset({ estado: 'Disponible' });
+          setTimeout(() => this.router.navigate(['/listado']), 500);
         });
       }
     }
