@@ -30,3 +30,5 @@ Estructura del Proyecto
 /src/app/components: Incluye los componentes principales (TurnList y TurnForm) que gestionan la vista y la interacción del usuario.
 
 /src/styles.scss: Estilos globales, tipografía y animaciones de fondo.
+
+Espero que mi proyecto sea de su agrado, saludos!!
