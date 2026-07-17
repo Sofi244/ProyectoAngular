@@ -1,7 +1,7 @@
 Desarrollo y acceso
 Desarrollado por Sofia Micaela Cuartas
 DNI: 45865979
-Email: cuartasofiamicaela@gmail.com
+Email: cuartassofiamicaela@gmail.com
 Sede: Tandil
 
 KineTurnos - Sistema de Gestión de Turnos
